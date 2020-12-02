@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Build Stage') {
       steps {
-        sh 'mvn -B -DskipTests clean package'
+        bat(script: 'mvn -B -DskipTests clean package', encoding: 'UTF-8')
       }
     }
 
     stage('Test Stage') {
       steps {
-        sh 'mvn test'
+        bat(script: 'mvn test', encoding: 'UTF-8')
         echo 'jyb___ The goal of these tests are to test something. '
         echo 'jyb___ Another test message'
       }
